@@ -5,7 +5,9 @@ const ListingContext = React.createContext();
 //Provider 
 //Consumer 
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002/listings';
+const BACKEND_URL_LISTINGS = process.env.REACT_APP_BACKEND_URL_LISTINGS || 'http://localhost:3002/listings';
+// const BACKEND_URL_USERS = process.env.REACT_APP_BACKEND_URL_USERS || 'http://localhost:3002/users';
+
 
 
 class ListingProvider extends Component {
@@ -18,7 +20,7 @@ class ListingProvider extends Component {
 
 //function to fetch data from backend server 
     componentDidMount () {
-        fetch(BACKEND_URL)
+        fetch(BACKEND_URL_LISTINGS)
             .then(response => response.json())
             .then(results => {
                 //console.log(results)

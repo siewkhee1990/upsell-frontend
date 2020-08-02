@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002/listings/create';
+const BACKEND_URL_LISTINGS_CREATE = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002/listings/create';
 
 
 class Sell extends Component {
@@ -27,7 +27,7 @@ class Sell extends Component {
         handleSubmit = (event) => {
             event.preventDefault();
             
-            fetch(BACKEND_URL, {
+            fetch(BACKEND_URL_LISTINGS_CREATE, {
                 body: JSON.stringify({
                     image_url: this.state.image_url,
                     name: this.state.name,
