@@ -13,10 +13,10 @@ class Product extends Component {
             <div className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                 <div className="card" style={{width:"15rem", marginBottom:"15px"}}>
                      <div 
-                        className='img-container p-5 view overlay zoom' 
+                        className='img-container p-5' 
                         onClick={() => console.log('you clicked me on the image container')}>
                         <Link to="/details">
-                            <img src={image_url} alt='' className="card-img-top"/>
+                            <img src={image_url} alt='' className="card-img-top" style={{width:"150px", height:"150px"}}/>
                         </Link>
                     </div>
                     <div className="card-body mx-auto">

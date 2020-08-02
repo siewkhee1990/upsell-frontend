@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
+
 const ListingContext = React.createContext();
 //Provider 
 //Consumer 
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002/listings';
 
 
 class ListingProvider extends Component {
@@ -27,16 +28,20 @@ class ListingProvider extends Component {
                 })
                 
             })
-            
-       
+                
     }
+
+
+
 
 
     render() { 
         return (  
             <ListingContext.Provider value={{
-        ...this.state,
-
+                ...this.state,
+                // handleChange : this.handleChange,
+                // handleSubmit: this.handleSubmit 
+                
             }}>
             {this.props.children}
             </ListingContext.Provider>
@@ -48,3 +53,4 @@ class ListingProvider extends Component {
 const ListingConsumer = ListingContext.Consumer;
  
 export {ListingProvider, ListingConsumer};
+

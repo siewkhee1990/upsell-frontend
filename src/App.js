@@ -23,7 +23,7 @@ class App extends Component{
             <Route path="/details" component={Details} />
             <Route path="/buynow" component={BuyNow} />
             <Route path='/sell' component={Sell}/>
-            <Route path='/editlisting' component={EditListing} />
+            <Route path='/edit/:id' component={EditListing} />
             <Route component={PageNotFound} />
           </Switch>       
       </React.Fragment>
