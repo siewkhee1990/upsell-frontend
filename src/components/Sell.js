@@ -95,9 +95,14 @@ class Sell extends Component {
                             <input className="form-control border border-danger" type="text" value={name}  id="name" onChange={this.handleChange}/>
                         </div>
 
-                        <div className="form-group">
+                        <div class="form-group">
                             <label htmlFor="category">Category</label>
-                            <input className="form-control border border-danger" type="text" value={category}  id="category" onChange={this.handleChange} />
+                            <select className="form-control border border-danger" type="text" value={category} id="category" onChange={this.handleChange}>
+                            <option>bag</option>
+                            <option>fashion</option>
+                            <option>shoes</option>
+                            <option>other</option>
+                            </select>
                         </div>
 
                         <div className="form-group">
@@ -122,11 +127,13 @@ class Sell extends Component {
                             <input className="form-control border border-danger" type="text" value={meetup}  id="meetup" onChange={this.handleChange}/>
                         </div>  
 
-
-                        <div className="form-group ">
-                            <label htmlFor="condition">Condition</label>
-                            <input className="form-control border border-danger" type="text" value={condition}  id="condition" placeholder="new or old" onChange={this.handleChange}/>
-                        </div>  
+                        <div class="form-group">
+                            <label htmlFor="category">Condition</label>
+                            <select className="form-control border border-danger" type="text" value={condition} id="condition" onChange={this.handleChange}>
+                            <option>new</option>
+                            <option>old</option>
+                            </select>
+                        </div>
                     
                     <button className="btn btn-danger" type="submit">Submit</button>              
                 </form>
