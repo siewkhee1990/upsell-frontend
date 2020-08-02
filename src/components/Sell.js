@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import {Redirect} from 'react-router-dom';
 
 const BACKEND_URL_LISTINGS_CREATE = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002/listings/create';
 
@@ -61,6 +62,7 @@ class Sell extends Component {
                     condition: '' 
                  
                 })
+                    // return <Redirect to='/' />
                
               }).catch(error => {
                 console.log(error);
