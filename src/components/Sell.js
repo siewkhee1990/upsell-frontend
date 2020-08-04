@@ -1,12 +1,12 @@
 
 import React, { Component } from 'react';
 
-const BACKEND_URL_LISTINGS_CREATE = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002/listings/create';
+const BACKEND_URL_LISTINGS = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3002/listings';
 
 
 class Sell extends Component {
-        constructor() {
-            super();
+        constructor(props) {
+            super(props);
         this.state = {
             image_url: '',
             name: '',
@@ -19,8 +19,7 @@ class Sell extends Component {
             listings: [],
             
 
-        }
-        
+        }    
             
     }
 
@@ -29,9 +28,8 @@ class Sell extends Component {
         }
     
         handleSubmit = (event) => {
-            event.preventDefault();
-            
-            fetch(BACKEND_URL_LISTINGS_CREATE, {
+            event.preventDefault(); 
+            fetch(BACKEND_URL_LISTINGS + '/create', {
                 body: JSON.stringify({
                     image_url: this.state.image_url,
                     name: this.state.name,
@@ -42,7 +40,6 @@ class Sell extends Component {
                     meetup: this.state.meetup,
                     condition: this.state.condition
                  }),
-
                 method: 'POST',
                 headers: {
                   'Accept': 'application/json, text/plain, */*',
@@ -69,12 +66,8 @@ class Sell extends Component {
                 this.props.history.push('/')
               }).catch(error => {
                 console.log(error);
-              });    
-    
+              });   
         }
-
-    
-  
 
     render() { 
         const {image_url, name, category, description, quantity, price, meetup, condition} = this.state;

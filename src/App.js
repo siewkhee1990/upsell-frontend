@@ -30,8 +30,8 @@ class App extends Component{
             <Route path="/:itemID/details" component={Details} />
             
             <privateRoute path="/:itemID/buynow" component={BuyNow} />
-            <PrivateRoute path="/sell" roles={["user"]} component={Sell} />
-            <PrivateRoute path="/editlisting" component={EditListing} />
+            <Route path="/sell" component={Sell} />
+            <Route path="/editlisting" component={EditListing} />
             <PrivateRoute path="/profile" component={Profile} />
 
             <UnPrivateRoute path="/login" component={Login}/>
