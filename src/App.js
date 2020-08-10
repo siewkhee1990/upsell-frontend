@@ -18,6 +18,7 @@ import SignUpSucess from './components/authentication/SignUpSuccess';
 import PrivateRoute from './hocs/PrivateRoute';
 // import UnPrivateRoute from './hocs/UnPrivateRoute';
 import Modal from './components/Modal/Modal'
+import PubUserProfile from './components/PubUserProfile';
 
 
 
@@ -56,8 +57,13 @@ class App extends Component {
           <PrivateRoute toggleModal={(event) => this.toggleModal(event)} path="/:itemID/buynow" component={BuyNow} />
           <PrivateRoute path="/sell" component={Sell} />
 
+          <Route path="/:userID/profile" render={(props) => (
+            <PubUserProfile filter={this.state.filter} {...props}/>
+          )} />
+
           <PrivateRoute path="/:itemID/editlisting" component={EditListing} />
           <PrivateRoute path="/:userID/userprofile" component={UserProfile} />
+
 
           <Route path="/login" render={() => (
             <Login setUser={(event) => this.setUser(event)} />

@@ -32,7 +32,7 @@ class Details extends Component {
                     <div className="col-xs-5" style={{ border: "0px solid gray", maxWidth: "25%" }}>
                         <h3>{this.state.listings.name}</h3>
 
-                        <p>Posted by: <Link to="">{this.state.listings.username}</Link></p>
+                        <p>Posted by: <Link to={`/${this.state.listings.userID}/profile`}>{this.state.listings.username}</Link></p>
 
                         <h5 style={{ color: "#337ab7" }}>Category: {this.state.listings.category}</h5>
 
