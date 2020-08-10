@@ -11,7 +11,8 @@ export default {
             body: JSON.stringify(info),
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'access_token': localStorage.getItem('access_token')
             }
         }).then(res => res.json())
             .then(data => data);

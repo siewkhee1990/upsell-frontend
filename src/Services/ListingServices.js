@@ -19,7 +19,8 @@ export default {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'access_token': localStorage.getItem('access_token')
             }
         })
             .then(res => res.json())

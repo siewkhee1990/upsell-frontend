@@ -12,7 +12,10 @@ export default {
             }
         }).then(res => {
             if (res.status !== 401)
-                return res.json().then(data => data);
+                return res.json().then(data => {
+                    localStorage.setItem("access_token", data.user.token);
+                    return data
+                });
             else
                 return { isAuthenticated: false, user: { username: "" } };
         })
@@ -31,10 +34,19 @@ export default {
     logout: () => {
         return fetch(`${BACKEND_URL_USERS}/logout`, { credentials: 'include' })
             .then(res => res.json())
-            .then(data => data);
+            .then(data => data)
+            .catch(err => {
+                // if no cookie, it will return error	
+                return { user: { username: "" }, success: true };
+            });
     },
     isAuthenticated: () => {
-        return fetch(`${BACKEND_URL_USERS}/authenticated`, { credentials: 'include' })
+        return fetch(`${BACKEND_URL_USERS}/authenticated`, { 
+            credentials: 'include',
+            headers: {
+                'access_token': localStorage.getItem('access_token')
+            }
+         })
             .then(res => {
                 if (res.status !== 401) {
                     return res.json().then(data => data);

@@ -16,6 +16,7 @@ const Navbar = props => {
             if (data.success) {
                 setUser(data.user);
                 setIsAuthenticated(false);
+                localStorage.removeItem('access_token');
                 history.push('/')
             }
         })
