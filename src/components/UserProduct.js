@@ -20,7 +20,7 @@ class UserProduct extends Component {
                     <div
                         className='img-container p-5 view overlay zoom'
                         onClick={() => console.log('you clicked me on the image container')}>
-                        <Link to={`${_id}/details`}>
+                        <Link to={`/${_id}/details`}>
                             <img src={image_url} alt='' className="card-img-top" />
                         </Link>
                     </div>

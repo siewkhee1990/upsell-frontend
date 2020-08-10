@@ -5,9 +5,6 @@ const ListingContext = React.createContext();
 //Provider 
 //Consumer 
 
-const BACKEND_URL_LISTINGS = process.env.REACT_APP_BACKEND_URL_LISTINGS || 'http://localhost:3002/listings';
-
-
 class ListingProvider extends Component {
     constructor(props) {
         super(props);

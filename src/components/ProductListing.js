@@ -14,7 +14,6 @@ class ProductListing extends Component {
     render() {
         return (
             <React.Fragment>
-                <button onClick={() => { this.setState({ showExample: true }) }} >Modal Trial</button>
                 <div className="py-5">
                     <div className="container">
                         <h1> Product Listings</h1>
@@ -32,7 +31,6 @@ class ProductListing extends Component {
                         </div>
                     </div>
                 </div>
-                <Example show={this.state.showExample} handleClose={() => this.setState({ showExample: false })} />
             </React.Fragment>
         );
     }

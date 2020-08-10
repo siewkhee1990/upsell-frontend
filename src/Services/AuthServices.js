@@ -11,13 +11,15 @@ export default {
                 'Accept': 'application/json'
             }
         }).then(res => {
-            if (res.status !== 401)
+            if (res.status !== 401) {
                 return res.json().then(data => {
                     localStorage.setItem("access_token", data.user.token);
                     return data
                 });
-            else
+            }
+            else {
                 return { isAuthenticated: false, user: { username: "" } };
+            }
         })
     },
     register: user => {
